@@ -8,10 +8,11 @@ namespace GitHub_Examples
         static void Main(string[] args)
         {
             string[] names = new string[] { "Hello", "Test", "bye" };
-            int[] numbers = new int[] { 1, 2, 3 };
+            int[] integer = new int[] { 1, 2, 3 };
             char[] signs = new char[] {'?','$','!' };
-
-            var forged = names.Zip(numbers, (n, e) => new { n, e }).Zip(signs, (x, s) => new { Names = x.n, Numbers = x.e, Signs = s });
+    
+            var forged = names.Zip(integer, (names, integer) => new { names, integer }).Zip(signs, (newstring, signs) => new { Names = newstring.names, Numbers = newstring.integer, Signs = signs });
+            
             foreach (var item in forged)
             {
              
